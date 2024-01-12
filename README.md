@@ -1,2 +1,2 @@
-# recipie_organizer
-recipie organizer React Native app + C# backend
+# recipe_organizer
+recipe organizer React Native app + C# backend
