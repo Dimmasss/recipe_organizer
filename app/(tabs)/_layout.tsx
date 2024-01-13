@@ -5,7 +5,7 @@ import { Pressable, useColorScheme } from 'react-native';
 import Colors from '../../constants/Colors';
 
 /**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
+ * https://icons.expo.fyi/
  */
 function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
@@ -23,10 +23,11 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
       }}>
       <Tabs.Screen
-        name="index"
+        name="cookbook"
         options={{
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          headerShadowVisible: false,
+          title: 'Cook Book',
+          tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
           headerRight: () => (
             <Link href="/modal" asChild>
               <Pressable>
@@ -46,22 +47,25 @@ export default function TabLayout() {
       <Tabs.Screen
         name="shoppinglist"
         options={{
+          headerShadowVisible: false,
           title: 'Shopping List',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="shopping-cart" color={color} />,
         }}
       />
       <Tabs.Screen
         name="discover"
         options={{
+          headerShadowVisible: false,
           title: 'Discover',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="search" color={color} />,
         }}
       />
       <Tabs.Screen
         name="settings"
         options={{
+          headerShadowVisible: false,
           title: 'Settings',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="gear" color={color} />,
         }}
       />
     </Tabs>

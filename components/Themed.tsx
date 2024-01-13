@@ -4,6 +4,7 @@
  */
 
 import { Text as DefaultText, useColorScheme, View as DefaultView } from 'react-native';
+import { SearchBar as DefaultSearchBar, SearchBarProps } from '@rneui/themed';
 
 import Colors from '../constants/Colors';
 
@@ -14,6 +15,7 @@ type ThemeProps = {
 
 export type TextProps = ThemeProps & DefaultText['props'];
 export type ViewProps = ThemeProps & DefaultView['props'];
+export type SearchProps = ThemeProps & SearchBarProps & { lightTheme?: boolean };
 
 export function useThemeColor(
   props: { light?: string; dark?: string },
@@ -41,4 +43,14 @@ export function View(props: ViewProps) {
   const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
 
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
+}
+
+export function SearchBar(props: SearchProps) {
+  const { ref, lightColor, darkColor, ...otherProps } = props;
+  const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
+  const themeLight = useColorScheme() === 'light'? true :
+                      useColorScheme() === 'dark'? false :
+                      undefined;
+
+  return <DefaultSearchBar containerStyle={{ backgroundColor }} lightTheme={themeLight} {...otherProps} />;
 }
