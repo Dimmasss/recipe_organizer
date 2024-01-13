@@ -26,17 +26,7 @@ export default function CookBookScreen() {
                   setSearch={setSearch}
                   colorScheme={colorScheme}
               />
-                  {/* <Welcome 
-                      searchTerm={searchTerm}
-                      setSearchTerm={setSearchTerm}
-                      handleClick= {() => {
-                          if (searchTerm) {
-                              router.push(`/search/${searchTerm}`);
-                          }
-                      }}
-                  />
-                  <Popularjobs />
-                  <Nearbyjobs /> */}
+                  {/*<PopularRecipes /> */}
               </View>
           </ScrollView>
       </SafeAreaView>

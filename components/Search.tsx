@@ -18,7 +18,7 @@ const updateSearch = (search : string) => {
 return (
   <View>
     <SearchBar
-      placeholder="Type Here..."
+      placeholder="Search recepies, incredients, etc."
       onChangeText={updateSearch}
       value={search}
       lightColor="white" darkColor="black"

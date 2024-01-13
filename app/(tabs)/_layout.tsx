@@ -29,7 +29,7 @@ export default function TabLayout() {
           title: 'Cook Book',
           tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
           headerRight: () => (
-            <Link href="/modal" asChild>
+            <Link href="/info" asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
@@ -45,19 +45,19 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="shoppinglist"
-        options={{
-          headerShadowVisible: false,
-          title: 'Shopping List',
-          tabBarIcon: ({ color }) => <TabBarIcon name="shopping-cart" color={color} />,
-        }}
-      />
-      <Tabs.Screen
         name="discover"
         options={{
           headerShadowVisible: false,
           title: 'Discover',
           tabBarIcon: ({ color }) => <TabBarIcon name="search" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="saved"
+        options={{
+          headerShadowVisible: false,
+          title: 'Saved',
+          tabBarIcon: ({ color }) => <TabBarIcon name="bookmark" color={color} />,
         }}
       />
       <Tabs.Screen
