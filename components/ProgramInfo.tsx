@@ -9,7 +9,7 @@ export default function AppInfo() {
     return (
         <View>
             <View style={styles.mainContainer}>
-                <Text style={styles.mainText} lightColor={Colors.light.tint}>
+                <Text style={styles.mainText} lightColor="#2a2c33">
                     <Text style={styles.boldText}>Cook Book Page: </Text>
                     This is the heart of the app, where users can access a personal
                     collection of recipes. It's designed with a user-friendly interface showcasing
@@ -21,7 +21,7 @@ export default function AppInfo() {
                     dietary restrictions, or ingredients.
                 </Text>
                 <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-                <Text style={styles.mainText} lightColor={Colors.light.tint}>
+                <Text style={styles.mainText} lightColor="#2a2c33">
                     <Text style={styles.boldText}>Discover Page: </Text>
                     Aimed at inspiring users, this page features a variety
                     of recipes from around the world. It includes a dynamic and visually
@@ -33,7 +33,7 @@ export default function AppInfo() {
                     it to their Cook Book for later use.
                 </Text>
                 <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-                <Text style={styles.mainText} lightColor={Colors.light.tint}>
+                <Text style={styles.mainText} lightColor="#2a2c33">
                     <Text style={styles.boldText}>Saved Page: </Text>
                     This page is a dedicated space for users to quickly access
                     all their saved and favorite recipes from the Cook Book and Discover pages.
