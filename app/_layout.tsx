@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
+import Colors from '../constants/Colors';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -49,7 +50,7 @@ function RootLayoutNav() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="info" options={{ presentation: 'modal', headerTitle: "Welcome to recipe app!" }} />
+        <Stack.Screen name="info" options={{ presentation: 'modal', headerTitle: "Welcome to recipe app!", headerStyle: { backgroundColor: Colors[colorScheme ?? 'light'].background }, }} />
       </Stack>
     </ThemeProvider>
   );
