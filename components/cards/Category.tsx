@@ -1,8 +1,8 @@
 import { Image, ImageSourcePropType, useColorScheme, StyleSheet } from 'react-native'
 import React from 'react'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { View, Text, TouchableOpacity } from './Themed';
-import Colors from '../constants/Colors';
+import { View, Text, TouchableOpacity } from '../Themed';
+import Colors from '../../constants/Colors';
 
 type CategoryProps = {
     name: string;

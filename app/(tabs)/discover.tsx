@@ -2,7 +2,7 @@ import { StyleSheet, Image, FlatList, useColorScheme } from 'react-native';
 
 import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View, TouchableOpacity } from '../../components/Themed';
-import Category from '../../components/Category';
+import Category from '../../components/cards/Category';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Colors from '../../constants/Colors';
 

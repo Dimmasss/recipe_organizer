@@ -1,6 +1,7 @@
 import { NativeSyntheticEvent, SafeAreaView, ScrollView, StyleSheet, TextInputFocusEventData, useColorScheme } from 'react-native';
 
 import EditScreenInfo from '../../components/EditScreenInfo';
+import PopularRecipes from '../../components/PopularRecipes';
 import { Text, View } from '../../components/Themed';
 import { SetStateAction, useState } from 'react';
 import { Stack, useRouter } from 'expo-router';
@@ -13,23 +14,19 @@ export default function CookBookScreen() {
 
   const colorScheme = useColorScheme();
 
-  const updateSearch = (search : any) => {
+  const updateSearch = (search: any) => {
     setSearch(search.nativeEvent.text);
   };
 
   return (
-      <SafeAreaView style={{ flex: 1}}>
-          <ScrollView showsVerticalScrollIndicator={false}>
-              <View>
-              <Search 
-                  search={search}
-                  setSearch={setSearch}
-                  colorScheme={colorScheme}
-              />
-                  {/*<PopularRecipes /> */}
-              </View>
-          </ScrollView>
-      </SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
+      <Search
+        search={search}
+        setSearch={setSearch}
+        colorScheme={colorScheme}
+      />
+      <PopularRecipes />
+    </SafeAreaView>
   )
 }
 
