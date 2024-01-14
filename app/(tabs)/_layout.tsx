@@ -21,10 +21,13 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarStyle: { paddingBottom: 4, height: 60 },
+        headerShown: false,
       }}>
       <Tabs.Screen
         name="cookbook"
         options={{
+          headerShown: true,
           headerShadowVisible: false,
           headerStyle: { backgroundColor: Colors[colorScheme ?? 'light'].background },
           title: 'Cook Book',
@@ -48,7 +51,6 @@ export default function TabLayout() {
       <Tabs.Screen
         name="discover"
         options={{
-          headerShown: false,
           title: 'Discover',
           tabBarIcon: ({ color }) => <TabBarIcon name="search" color={color} />,
         }}
@@ -56,7 +58,6 @@ export default function TabLayout() {
       <Tabs.Screen
         name="saved"
         options={{
-          headerShown: false,
           title: 'Saved',
           tabBarIcon: ({ color }) => <TabBarIcon name="bookmark" color={color} />,
         }}
@@ -64,7 +65,6 @@ export default function TabLayout() {
       <Tabs.Screen
         name="settings"
         options={{
-          headerShown: false,
           title: 'Settings',
           tabBarIcon: ({ color }) => <TabBarIcon name="gear" color={color} />,
         }}
