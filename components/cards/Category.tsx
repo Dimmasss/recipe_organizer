@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 10,
     },
     categoryText: {
-        fontWeight: 'bold',
+        fontFamily: 'DMBold',
     },
     categoryDescription: {
         display: 'flex',

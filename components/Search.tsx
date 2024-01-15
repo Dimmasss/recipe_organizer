@@ -19,6 +19,7 @@ const Search: React.FunctionComponent<SearchBarComponentProps> = () => {
     <View>
       <SearchBar
         placeholder="Search recepies, incredients, etc."
+        inputStyle={{ fontFamily: 'DMRegular' }}
         onChangeText={updateSearch}
         value={search}
         lightColor="#eee" darkColor="rgba(255,255,255,0.1)"
