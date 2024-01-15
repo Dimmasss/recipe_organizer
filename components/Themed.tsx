@@ -3,8 +3,13 @@
  * https://docs.expo.io/guides/color-schemes/
  */
 
-import { Text as DefaultText, useColorScheme, View as DefaultView, TouchableOpacity as DefaultTouchableOpacity } from 'react-native';
-import { SearchBar as DefaultSearchBar, SearchBarProps } from '@rneui/themed';
+import {
+  Text as DefaultText, useColorScheme,
+  View as DefaultView,
+  TouchableOpacity as DefaultTouchableOpacity,
+  TouchableOpacityProps as DefaultTouchableOpacityProps
+} from 'react-native';
+import { SearchBar as DefaultSearchBar, SearchBarProps, SearchBarDefaultProps } from '@rneui/themed';
 
 import Colors from '../constants/Colors';
 
@@ -16,7 +21,7 @@ type ThemeProps = {
 export type TextProps = ThemeProps & DefaultText['props'];
 export type ViewProps = ThemeProps & DefaultView['props'];
 export type TouchableOpacityProps = ThemeProps & DefaultTouchableOpacity['props'];
-export type SearchProps = ThemeProps & SearchBarProps & { lightTheme?: boolean };
+export type SearchProps = ThemeProps & SearchBarProps & SearchBarDefaultProps;
 
 export function useThemeColor(
   props: { light?: string; dark?: string },
@@ -55,10 +60,11 @@ export function TouchableOpacity(props: ViewProps) {
 
 export function SearchBar(props: SearchProps) {
   const { ref, lightColor, darkColor, ...otherProps } = props;
-  const backgroundColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
+  const backgroundColor = useThemeColor({ light: 'white', dark: 'black' }, 'background');
+  const inputContainerColor = useThemeColor({ light: lightColor, dark: darkColor }, 'background');
   const themeLight = useColorScheme() === 'light' ? true :
     useColorScheme() === 'dark' ? false :
       undefined;
 
-  return <DefaultSearchBar containerStyle={{ backgroundColor }} lightTheme={themeLight} {...otherProps} />;
+  return <DefaultSearchBar containerStyle={{ backgroundColor }} inputContainerStyle={{ backgroundColor: inputContainerColor }} lightTheme={themeLight} {...otherProps} />;
 }

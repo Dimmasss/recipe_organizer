@@ -1,4 +1,4 @@
-import { View, Text } from '../components/Themed';
+import { View, Text, TouchableOpacity } from '../components/Themed';
 import { FlatList, StyleSheet } from 'react-native';
 import Recipe from '../components/cards/Recipe';
 import React from 'react'
@@ -12,9 +12,29 @@ const PopularRecipes = () => {
         { name: 'Salad', image: require('../assets/images/salad.jpg'), difficulty: 'easy', preparationTime: 30, calories: 200 },
     ];
 
+    const recipeDifficulties = ['easy', 'medium', 'hard'];
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Popular Recipes</Text>
+            <View style={styles.tabsContainer}>
+                <FlatList
+                    data={recipeDifficulties}
+                    renderItem={({ item }) => (
+                        <TouchableOpacity
+                            style={styles.tab}
+                            onTouchEnd={() => {
+                                // setActiveJobType(item);
+                                // router.push(`/search/${item}`);
+                            }}>
+                            <Text style={styles.tabText}>{item}</Text>
+                        </TouchableOpacity>
+                    )}
+                    keyExtractor={item => item}
+                    contentContainerStyle={{ columnGap: 12 }}
+                    horizontal
+                />
+            </View>
             <FlatList
                 data={popularRecipes}
                 renderItem={
@@ -43,6 +63,21 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 20,
         paddingTop: 10,
+    },
+    tabsContainer: {
+        width: "100%",
+        marginBottom: 16,
+    },
+    tab: {
+        paddingVertical: 6,
+        paddingHorizontal: 12,
+        borderRadius: 16,
+        borderWidth: 1,
+        borderColor: '#C1C0C8',
+    },
+    tabText: {
+        fontFamily: 'DMMedium',
+        color: '#C1C0C8',
     },
     title: {
         fontSize: 24,

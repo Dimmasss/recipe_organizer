@@ -1,4 +1,4 @@
-import { Image, ImageSourcePropType, useColorScheme, StyleSheet } from 'react-native'
+import { Image, ImageSourcePropType, useColorScheme, StyleSheet, TextStyle } from 'react-native'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import React from 'react'
 import FontAwesome from '@expo/vector-icons/FontAwesome';
@@ -25,13 +25,13 @@ const Recipe = ({ name, image, difficulty, preparationTime, calories }: RecipePr
                     {name}
                 </Text>
                 <Text style={styles.difficulty}>
-                    {difficulty}
+                    ({difficulty})
                 </Text>
                 <View style={styles.recipeData} >
                     <View style={{ alignItems: 'center', alignSelf: 'flex-end', marginRight: 'auto' }}>
                         <MaterialCommunityIcons
                             name="stomach"
-                            size={12}
+                            size={16}
                             color={Colors[colorScheme ?? 'light'].text}
                         />
                         <Text style={styles.infoText}>
@@ -41,7 +41,7 @@ const Recipe = ({ name, image, difficulty, preparationTime, calories }: RecipePr
                     <View style={{ alignItems: 'center', alignSelf: 'flex-end', marginLeft: 'auto' }}>
                         <FontAwesome
                             name="clock-o"
-                            size={12}
+                            size={16}
                             color={Colors[colorScheme ?? 'light'].text}
                         />
                         <Text style={styles.infoText}>
@@ -78,8 +78,8 @@ const styles = StyleSheet.create({
     },
     difficulty: {
         marginVertical: 5,
-        fontStyle: 'italic',
-        fontSize: 13
+        fontFamily: 'DMBold',
+        fontSize: 12,
     },
     recipeDescription: {
         display: 'flex',
@@ -103,6 +103,8 @@ const styles = StyleSheet.create({
         height: '20%',
     },
     infoText: {
+        marginTop: 5,
         fontSize: 12,
+        fontWeight: '100',
     }
 });
