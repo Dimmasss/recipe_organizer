@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity } from '../components/Themed';
 import { FlatList, StyleSheet } from 'react-native';
-import Recipe from '../components/cards/Recipe';
+import Recipe from './cards/RecipeCard';
 import React from 'react'
 
 const PopularRecipes = () => {

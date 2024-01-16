@@ -14,7 +14,7 @@ type RecipeProps = {
     calories: number;
 }
 
-const Recipe = ({ name, image, difficulty, preparationTime, calories }: RecipeProps) => {
+const RecipeCard = ({ name, image, difficulty, preparationTime, calories }: RecipeProps) => {
     const colorScheme = useColorScheme();
 
     return (
@@ -54,7 +54,7 @@ const Recipe = ({ name, image, difficulty, preparationTime, calories }: RecipePr
     )
 }
 
-export default Recipe
+export default RecipeCard
 
 const styles = StyleSheet.create({
     recipeItem: {

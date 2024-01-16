@@ -1,6 +1,6 @@
 import { View, Text } from './Themed';
 import React from 'react';
-import Recipe from './cards/Recipe';
+import Recipe from './cards/RecipeCard';
 import { ImageSourcePropType } from 'react-native';
 
 interface Recipe {
