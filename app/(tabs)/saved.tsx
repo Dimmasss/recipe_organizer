@@ -1,14 +1,25 @@
-import { StyleSheet } from 'react-native';
+import { ImageSourcePropType, StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View } from '../../components/Themed';
+import SavedRecipes from '../../components/SavedRecipes';
 
 export default function SavedScreen() {
+  interface Recipe {
+    name: string;
+    image: ImageSourcePropType;
+    difficulty: string;
+    preparationTime: number;
+    calories: number;
+  }
+
+  const recipes: Recipe[] = [];
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Saved</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/shoppinglist.tsx" />
+      <SavedRecipes recipes={recipes} />
     </View>
   );
 }
@@ -21,7 +32,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily: 'DMBold'
   },
   separator: {
     marginVertical: 30,
